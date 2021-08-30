@@ -6,9 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5dc3b-1b2f-4fea-a98e-19dd1a598f1d" name="Default Changelist" comment="Add a Position saving system">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
+    <list default="true" id="14c5dc3b-1b2f-4fea-a98e-19dd1a598f1d" name="Default Changelist" comment="Change Plugin version from &quot;2.0&quot; -&gt; 2.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/asmax/simplewarp/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/asmax/simplewarp/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/asmax/simplewarp/position/commands/PositionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/asmax/simplewarp/position/commands/PositionCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630352629072</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Change Plugin version from &quot;2.0&quot; -&gt; 2.1">
+      <created>1630352779254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630352779254</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +127,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="IDE settings" />
     <MESSAGE value="Add a Position saving system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a Position saving system" />
+    <MESSAGE value="Change Plugin version from &quot;2.0&quot; -&gt; 2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Plugin version from &quot;2.0&quot; -&gt; 2.1" />
   </component>
 </project>

@@ -21,15 +21,33 @@ public class PositionCommand implements CommandExecutor {
         }
         Player player = (Player)sender;
 
-        if(player.hasPermission("simplewarp.position")) {
+        File file = new File("plugins/SimpleWarp", "positions.yml");
+        FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 
-            File file = new File("plugins/SimpleWarp", "positions.yml");
-            FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
+        File file2 = new File("plugins/SimpleWarp", "config.yml");
+        FileConfiguration cfg2 = YamlConfiguration.loadConfiguration(file2);
+
+        if(!cfg2.getBoolean("PositionSystem")) {
+            System.out.println(cfg2.getBoolean("PositionSystem"));
+            player.sendMessage(Main.pr + "§cThis feature has been disabled by a Network Administrator!");
+            return true;
+        }
+
+        if(player.hasPermission("simplewarp.position")) {
 
             if(args.length != 0) {
                 if(args[0].equalsIgnoreCase("list")) {
+                    if(!player.hasPermission("simplewarp.position.list")) {
+                        player.sendMessage(Main.pr + "§cYou do not have the Permission to do that!");
+                        return true;
+                    }
                     player.sendMessage("§8[§6Position§8] §7Available §9positions: §b" + cfg.getConfigurationSection(".Positions").getKeys(false));
                 } else if(args[0].equalsIgnoreCase("del")) {
+
+                    if(!player.hasPermission("simplewarp.position.del")) {
+                        player.sendMessage(Main.pr + "§cYou do not have the Permission to do that!");
+                        return true;
+                    }
 
                     String id = args[1];
                     System.out.println(id);
@@ -56,6 +74,11 @@ public class PositionCommand implements CommandExecutor {
 
                     if(cfg.getString(".Positions." + id) != null) {
 
+                        if(!player.hasPermission("simplewarp.position.view")) {
+                            player.sendMessage(Main.pr + "§cYou do not have the Permission to do that!");
+                            return true;
+                        }
+
                         String world = cfg.getString(".Positions" + "." + id + ".World");
 
                         int x = cfg.getInt(".Positions" + "." + id + ".X");
@@ -63,6 +86,11 @@ public class PositionCommand implements CommandExecutor {
                         int z = cfg.getInt(".Positions" + "." + id + ".Z");
 
                         player.sendMessage("§8[§6Position§8] §9" + id + " §8[§6" + x + "§8, §6" + y + "§8, §6" + z + "§8, §6" + world + "§8]");
+                        return true;
+                    }
+
+                    if(!player.hasPermission("simplewarp.position.create")) {
+                        player.sendMessage(Main.pr + "§cYou do not have the Permission to do that!");
                         return true;
                     }
 
