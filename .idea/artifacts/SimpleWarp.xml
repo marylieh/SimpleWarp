@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="SimpleWarp">
-    <output-path>G:/Data/Desktop</output-path>
+    <output-path>$USER_HOME$/Documents/Export/SimpleWarp</output-path>
     <root id="archive" name="SimpleWarp.jar">
       <element id="module-output" name="SimpleWarp" />
       <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />

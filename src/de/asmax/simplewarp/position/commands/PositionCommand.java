@@ -32,14 +32,22 @@ public class PositionCommand implements CommandExecutor {
                 } else if(args[0].equalsIgnoreCase("del")) {
 
                     String id = args[1];
+                    System.out.println(id);
 
-                    if(cfg.getString(".Positions." + id) != null) {
+                    if(cfg.getString("Positions." + id) != null) {
 
-                        cfg.set(".Positions." + id, null);
+                        cfg.set("Positions." + id, null);
+
+                        try {
+                            cfg.save(file);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
                         player.sendMessage(Main.pr + "The Position §a" + args[1] + " §6has been successfully §cdeleted!");
 
                     } else {
-                        player.sendMessage(Main.pr + "§cThis position didnt exists.");
+                        player.sendMessage(Main.pr + "§cThis position didn't exists.");
                         return true;
                     }
 
@@ -78,7 +86,7 @@ public class PositionCommand implements CommandExecutor {
                     }
                 }
             } else {
-                player.sendMessage(Main.pr + "Invalid Argument, please use one of the following arguments: §c/position <list | position");
+                player.sendMessage(Main.pr + "Invalid Argument, please use one of the following arguments: §c/position <list | position | del>");
             }
 
         } else {

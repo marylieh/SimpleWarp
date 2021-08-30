@@ -32,7 +32,7 @@ public class DelWarpCommand implements CommandExecutor{
 					
 					cfg.set(".Warps" + "." + id, null);
 					
-					p.sendMessage(Main.pr + "§aThe Warp §6" + id + "§a was succesfully deleted!");
+					p.sendMessage(Main.pr + "§aThe Warp §6" + id + "§a was successfully deleted!");
 					
 					try {
 						cfg.save(file);
