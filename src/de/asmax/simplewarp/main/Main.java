@@ -1,15 +1,11 @@
 package de.asmax.simplewarp.main;
 
+import de.asmax.simplewarp.commands.*;
 import de.asmax.simplewarp.position.commands.PositionCommand;
 import de.asmax.simplewarp.utils.Updater;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import de.asmax.simplewarp.commands.DelWarpCommand;
-import de.asmax.simplewarp.commands.SetWarpCommand;
-import de.asmax.simplewarp.commands.WarpCommand;
-import de.asmax.simplewarp.commands.WarpsCommand;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,12 +13,15 @@ import java.io.IOException;
 public class Main extends JavaPlugin {
 	
 	private static Main plugin;
+	private static Main instance;
+	private static String version = "R-2.3";
 	
 	public static String pr = "§6[SimpleWarp] ";
 	
 	@Override
 	public void onEnable() {
 		plugin = this;
+		instance = this;
 
 		genFilesPosition();
 		
@@ -31,8 +30,9 @@ public class Main extends JavaPlugin {
 		getCommand("delwarp").setExecutor(new DelWarpCommand());
 		getCommand("warps").setExecutor(new WarpsCommand());
 		getCommand("position").setExecutor(new PositionCommand());
+		getCommand("warpversion").setExecutor(new WarpVersion());
 
-		Updater updater = new Updater(this, 97545, getFile(), Updater.UpdateType.DEFAULT, true);
+		Updater updater = new Updater(this, 395393, this.getFile(), Updater.UpdateType.DEFAULT, true);
 
 	}
 
@@ -61,5 +61,13 @@ public class Main extends JavaPlugin {
 	
 	public static Main getPlugin() {
 		return plugin;
+	}
+
+	public static Main getInstance() {
+		return instance;
+	}
+
+	public static String getVersion() {
+		return version;
 	}
 }

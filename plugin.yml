@@ -1,5 +1,5 @@
 name: SimpleWarp
-version: 2.2
+version: 2.3
 author: AsMax
 main: de.asmax.simplewarp.main.Main
 
@@ -9,3 +9,4 @@ commands:
    delwarp:
    warps:
    position:
+   warpversion:
